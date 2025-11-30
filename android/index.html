@@ -3,104 +3,418 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOTON Android - Avisador de Radares</title>
+    <title>NOTON - Avisador de Radares para Android</title>
+    <meta name="description" content="NOTON - Avisador de radares para Android con avisos en España y Portugal, arranque automático por Bluetooth, lectura de notificaciones y más.">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #ffffff;
-            background-color: #000000;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #000000;
+            color: #00ff00;
+            line-height: 1.6;
+        }
+
         .header {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
-            color: #000000;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 30px rgba(0,255,0,0.4);
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #001a00 0%, #000000 100%);
+            border-bottom: 2px solid #00ff00;
         }
+
         .logo {
             width: 120px;
             height: 120px;
-            margin: 0 auto 20px;
-            display: block;
+            margin-bottom: 20px;
         }
-        .platform-icon {
-            width: 60px;
-            height: 60px;
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 10px;
-            filter: brightness(0);
-        }
+
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ff00;
         }
+
         .subtitle {
             font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .hero-text {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 20px auto;
             opacity: 0.9;
         }
+
         .content {
-            background: #1a1a1a;
-            padding: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background-color: #0a0a0a;
+            border: 2px solid #00ff00;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,255,0,0.2);
-            border: 1px solid #00ff00;
+            padding: 40px;
+            margin-bottom: 30px;
         }
-        .content h2 {
-            color: #00ff00;
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 5px #00ff00;
+            text-align: center;
         }
-        .content p {
-            color: #cccccc;
-        }
-        .legal-links {
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin-top: 30px;
-            padding: 20px;
-            background: #222222;
-            border-radius: 5px;
-            border: 1px solid #333333;
         }
-        .legal-links h2 {
-            color: #00ff00;
+
+        .feature-card {
+            background-color: #001a00;
+            border: 1px solid #00ff00;
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3em;
             margin-bottom: 15px;
+            text-shadow: 0 0 5px #00ff00;
         }
-        .legal-links a {
+
+        .feature-card p {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background-color: #003300;
+            padding: 20px;
+            border-left: 4px solid #00ff00;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .download-btn {
             display: inline-block;
-            margin: 5px 10px;
+            background-color: #00ff00;
+            color: #000000;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            margin: 20px 10px;
+        }
+
+        .download-btn:hover {
+            background-color: #00cc00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            transform: scale(1.05);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .pricing-card {
+            background-color: #001a00;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .price-note {
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid #00ff00;
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer a {
             color: #00ff00;
             text-decoration: none;
-            transition: all 0.3s ease;
+            margin: 0 15px;
         }
-        .legal-links a:hover {
+
+        .footer a:hover {
             text-decoration: underline;
-            text-shadow: 0 0 10px rgba(0,255,0,0.8);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .download-btn {
+                padding: 12px 30px;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
         <img src="/noton-web/shared/images/logo.png" alt="NOTON Logo" class="logo">
-        <h1><img src="/noton-web/shared/images/android-icon.png" alt="Android" class="platform-icon"> NOTON Android</h1>
-        <p class="subtitle">Avisador de Radares para Android</p>
+        <h1>NOTON para Android</h1>
+        <p class="subtitle">Avisador de Radares Inteligente</p>
+        <p class="hero-text">
+            El avisador de radares más completo para Android con avisos en España y Portugal, 
+            arranque automático por Bluetooth y lectura de notificaciones.
+        </p>
     </div>
-    
+
     <div class="content">
-        <h2>Bienvenido a NOTON Android</h2>
-        <p>Esta página estará disponible próximamente con información completa sobre la aplicación NOTON para Android.</p>
-        
-        <div class="legal-links">
-            <h2>📄 Documentación Legal</h2>
-            <p>
-                <a href="/noton-web/android/legal/privacy-es.html">Política de Privacidad (ES)</a> |
-                <a href="/noton-web/android/legal/privacy-en.html">Privacy Policy (EN)</a> |
-                <a href="/noton-web/android/legal/privacy-pt.html">Política de Privacidade (PT)</a>
+        <div class="section">
+            <h2>Características Principales</h2>
+            
+            <div class="highlight">
+                <strong>Base de Datos LaradioBBS.net</strong> - Disfruta de una de las bases de datos de radares 
+                más completas y actualizadas de España y Portugal, con actualizaciones constantes.
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>📡 Avisos de Radares</h3>
+                    <p>
+                        Avisos de radares fijos, móviles, de tramo, en semáforo, en túnel, puntos negros 
+                        y tramos de concentración de accidentes en España y Portugal. Aviso por pitido si 
+                        excedes el límite de velocidad.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔊 Lectura de Notificaciones</h3>
+                    <p>
+                        NOTON lee en voz alta (TTS) las notificaciones que lleguen a tu dispositivo: 
+                        correos electrónicos, SMS, WhatsApp, llamadas perdidas, mensajes de redes sociales... 
+                        Sin tocar el teléfono mientras conduces.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔵 Arranque Automático Bluetooth</h3>
+                    <p>
+                        Los servicios de avisos y lectura de notificaciones arrancan automáticamente 
+                        cuando detectan conexión con tu manos libres Bluetooth del coche. Totalmente automático.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>⌚ Compatibilidad Android Wear</h3>
+                    <p>
+                        Recibe avisos de radares directamente en tu smartwatch Android Wear. 
+                        Mantente informado sin distracciones visuales mientras conduces.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📍 Encontrar Vehículo</h3>
+                    <p>
+                        ¿No recuerdas dónde aparcaste? NOTON guarda automáticamente la ubicación 
+                        del último trayecto y te guía de vuelta usando Google Maps.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🗺️ Registro de Trayectos</h3>
+                    <p>
+                        Registra automáticamente cada trayecto con fecha, hora, tiempo transcurrido 
+                        y kilómetros recorridos. Exporta el histórico en formato CSV.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>⭐ Lugares Favoritos</h3>
+                    <p>
+                        Guarda tus lugares habituales como favoritos. NOTON detecta automáticamente 
+                        cuando llegas a un lugar favorito y lo registra en el trayecto.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔄 Funcionamiento en Segundo Plano</h3>
+                    <p>
+                        Tanto los avisos de radares como la lectura de notificaciones funcionan en 
+                        segundo plano. Usa cualquier otra app sin perder avisos. Estado visible en 
+                        la barra de notificaciones.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🗣️ Texto a Voz (TTS)</h3>
+                    <p>
+                        Todos los avisos y notificaciones se comunican mediante síntesis de voz. 
+                        Compatible con múltiples voces TTS disponibles en Play Store.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🎯 Interfaz Sencilla</h3>
+                    <p>
+                        Diseño minimalista sin mapa integrado. Botones grandes y accesibles que no 
+                        interfieren con la conducción. Funciona perfectamente junto a tu navegador GPS favorito.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🚨 Todos los Tipos de Radares</h3>
+                    <p>
+                        Incluye los nuevos radares FOTO-ROJO, radares en semáforo, radares de túnel, 
+                        Áreas de Prioridad Residencial y puntos negros.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>⚡ Optimizado y Ligero</h3>
+                    <p>
+                        App optimizada con gestión inteligente de batería. Funciona eficientemente 
+                        en segundo plano sin consumir recursos innecesarios.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Modelo de Precios</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>NOTON Gratis</h3>
+                    <div class="price">0€</div>
+                    <p>✅ Todas las funcionalidades</p>
+                    <p>✅ Base de datos LaradioBBS.net</p>
+                    <p>✅ España y Portugal</p>
+                    <p>✅ Bluetooth auto-arranque</p>
+                    <p>✅ Lectura de notificaciones</p>
+                    <p class="price-note">Con publicidad</p>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>NOTON+</h3>
+                    <div class="price">Único Pago</div>
+                    <p>✅ Todas las funcionalidades</p>
+                    <p>✅ Sin publicidad</p>
+                    <p>✅ Mantiene tus datos</p>
+                    <p>✅ Apoya el desarrollo</p>
+                    <p class="price-note">Compra única</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section cta-section">
+            <h2>Descarga NOTON</h2>
+            <p style="margin-bottom: 20px;">
+                Más de 100.000 descargas · Valoración 4.4/5 · 1.200+ opiniones
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.noton.app" class="download-btn" target="_blank">
+                Descargar en Google Play
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Requisitos y Permisos</h2>
+            <div class="highlight">
+                <p style="margin-bottom: 15px;">
+                    <strong>Compatibilidad:</strong> Android 6.0 (Marshmallow) o superior
+                </p>
+                <p style="margin-bottom: 15px;">
+                    <strong>Permisos necesarios:</strong>
+                </p>
+                <ul style="margin-left: 30px; line-height: 2;">
+                    <li><strong>Ubicación en segundo plano:</strong> Para avisar de radares mientras conduces</li>
+                    <li><strong>Bluetooth:</strong> Para arranque automático con manos libres</li>
+                    <li><strong>Accesibilidad:</strong> Para leer notificaciones en voz alta</li>
+                    <li><strong>Almacenamiento:</strong> Para guardar registro de trayectos</li>
+                </ul>
+                <p style="margin-top: 15px;">
+                    <strong>Privacidad:</strong> Los datos están cifrados durante el tránsito. 
+                    NOTON no recopila datos personales. Cumple con GDPR.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Soporte y Contacto</h2>
+            <p style="text-align: center; font-size: 1.1em;">
+                ¿Tienes problemas, dudas o sugerencias?<br>
+                Contacta con nuestro servicio de asistencia:<br><br>
+                <strong>notonapp@live.com</strong>
             </p>
         </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-links">
+            <a href="/noton-web/">Inicio</a>
+            <a href="/noton-web/android/legal/privacy-es.html">Política de Privacidad</a>
+            <a href="https://play.google.com/store/apps/details?id=com.noton.app" target="_blank">Google Play</a>
+        </div>
+        <p style="opacity: 0.7;">© 2025 NOTON - IGTech. Todos los derechos reservados.</p>
     </div>
 </body>
 </html>
