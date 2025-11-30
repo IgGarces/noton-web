@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - NOTON Avisador de Radares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Selector de idioma */
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .language-selector label {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #2c3e50;
+        }
+        .language-selector select {
+            padding: 5px 10px;
+            border: 2px solid #3498db;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #2c3e50;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .language-selector select:hover {
+            background-color: #ecf0f1;
+        }
+        .language-selector select:focus {
+            outline: none;
+            border-color: #2980b9;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .important {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-left: 4px solid #0c5460;
+            margin: 20px 0;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .contact {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        .last-updated {
+            font-style: italic;
+            color: #666;
+            text-align: right;
+        }
+    </style>
+    <script>
+        function changeLanguage() {
+            const select = document.getElementById('language-select');
+            const language = select.value;
+            if (language && language !== 'es') {
+                window.location.href = language + '.html';
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Selector de idioma -->
+    <div class="language-selector">
+        <label for="language-select">Idioma / Language / Idioma:</label>
+        <select id="language-select" onchange="changeLanguage()">
+            <option value="es" selected>Español</option>
+            <option value="en">English</option>
+            <option value="pt">Português</option>
+        </select>
+    </div>
+
+    <h1>Política de Privacidad de NOTON Avisador de Radares</h1>
+    <p class="last-updated">Última actualización: Octubre 2025</p>
+
+    <div class="important">
+        <p><strong>NOTON</strong> es una aplicación de alertas de radares de tráfico que respeta su privacidad. Esta política describe cómo accedemos, recopilamos, usamos y protegemos sus datos personales.</p>
+    </div>
+
+    <h2>1. Recopilación y Uso de Datos de Ubicación GPS</h2>
+
+    <div class="highlight">
+        <h3>📍 Acceso a Ubicación en Segundo Plano</h3>
+        <p><strong>La aplicación NOTON accede a su ubicación GPS de forma CONTINUA, incluso cuando la aplicación está en segundo plano, minimizada o la pantalla está apagada.</strong></p>
+    </div>
+
+    <h3>Detalles del acceso a ubicación:</h3>
+    <ul>
+        <li><strong>Tipo de dato:</strong> Ubicación GPS precisa (ACCESS_FINE_LOCATION)</li>
+        <li><strong>Acceso en segundo plano:</strong> Ubicación continua cuando la app está en background, minimizada o cerrada (ACCESS_BACKGROUND_LOCATION)</li>
+        <li><strong>Frecuencia:</strong> La ubicación se obtiene de forma continua mientras el servicio de alertas de radares está activo</li>
+        <li><strong>Propósito:</strong> Detectar su proximidad a radares de tráfico y emitir alertas sonoras en tiempo real mientras conduce</li>
+        <li><strong>Almacenamiento:</strong> Los datos de ubicación GPS se procesan ÚNICAMENTE de forma local en su dispositivo y NO se envían a servidores externos</li>
+        <li><strong>Compartición con terceros:</strong> NO compartimos sus datos de ubicación con terceros</li>
+        <li><strong>Retención:</strong> Los datos de ubicación se procesan en tiempo real para calcular distancias a radares cercanos y NO se almacenan permanentemente</li>
+    </ul>
+
+    <h3>¿Por qué necesitamos acceso continuo a su ubicación?</h3>
+    <p>NOTON es una aplicación de seguridad vial diseñada para alertarle de radares mientras conduce. Para cumplir esta función, la aplicación debe:</p>
+    <ul>
+        <li>Monitorizar su posición GPS constantemente mientras el servicio está activo</li>
+        <li>Calcular en tiempo real la distancia a radares cercanos</li>
+        <li>Emitir alertas sonoras cuando se aproxime a un radar</li>
+        <li>Funcionar incluso cuando la pantalla está apagada o está usando otras aplicaciones</li>
+    </ul>
+
+    <p><strong>Control del usuario:</strong> Puede activar o desactivar el servicio de alertas en cualquier momento desde la interfaz de la aplicación. Cuando desactiva el servicio, la aplicación deja de acceder a su ubicación inmediatamente.</p>
+
+    <h2>2. Otros Permisos de la Aplicación</h2>
+
+    <h3>Bluetooth (BLUETOOTH_CONNECT)</h3>
+    <ul>
+        <li><strong>Propósito:</strong> Detectar conexión con dispositivos Bluetooth del vehículo para activar automáticamente las alertas de radares</li>
+        <li><strong>Uso:</strong> Solo se utiliza para identificar conexiones/desconexiones de dispositivos Bluetooth previamente configurados por el usuario</li>
+        <li><strong>Datos recopilados:</strong> Nombre y dirección MAC del dispositivo Bluetooth conectado</li>
+        <li><strong>Almacenamiento:</strong> Los datos se guardan localmente en su dispositivo</li>
+        <li><strong>Compartición:</strong> NO se comparten con terceros</li>
+    </ul>
+
+    <h3>Acceso a Notificaciones (BIND_NOTIFICATION_LISTENER_SERVICE)</h3>
+    <ul>
+        <li><strong>Propósito:</strong> Leer notificaciones de aplicaciones seleccionadas (WhatsApp, Gmail, Teams) para reproducirlas por voz mientras conduce</li>
+        <li><strong>Uso:</strong> Funcionalidad opcional que debe ser activada explícitamente por el usuario</li>
+        <li><strong>Datos accedidos:</strong> Texto de las notificaciones de las aplicaciones configuradas</li>
+        <li><strong>Almacenamiento:</strong> Las notificaciones NO se almacenan, solo se reproducen por voz en tiempo real</li>
+        <li><strong>Compartición:</strong> NO se comparten con terceros</li>
+    </ul>
+
+    <h3>Servicios en Primer Plano (FOREGROUND_SERVICE)</h3>
+    <ul>
+        <li><strong>Propósito:</strong> Mantener el servicio de alertas de radares activo de forma continua</li>
+        <li><strong>Notificación:</strong> Mientras el servicio está activo, verá una notificación permanente que indica que NOTON está funcionando</li>
+    </ul>
+
+    <h2>3. Publicidad (Google AdMob)</h2>
+    <p>NOTON muestra publicidad mediante Google AdMob para ofrecer la aplicación de forma gratuita.</p>
+
+    <h3>Datos recopilados por AdMob:</h3>
+    <ul>
+        <li>Identificador de publicidad de Android (Advertising ID)</li>
+        <li>Información del dispositivo (modelo, sistema operativo, idioma)</li>
+        <li>Datos de interacción con anuncios</li>
+        <li>Dirección IP aproximada para publicidad contextual</li>
+    </ul>
+
+    <h3>Consentimiento GDPR:</h3>
+    <p>Para usuarios de la Unión Europea, la aplicación implementa el sistema de consentimiento UMP (User Messaging Platform) de Google que:</p>
+    <ul>
+        <li>Solicita su consentimiento antes de mostrar anuncios personalizados</li>
+        <li>Permite aceptar, rechazar o personalizar sus preferencias de privacidad</li>
+        <li>Cumple con el Reglamento General de Protección de Datos (GDPR)</li>
+    </ul>
+
+    <p><strong>Más información:</strong> Consulte la <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a> y la <a href="https://support.google.com/admob/answer/6128543" target="_blank">Política de AdMob</a></p>
+
+    <h2>4. Análisis y Reporte de Errores</h2>
+
+    <h3>Firebase Analytics y Crashlytics</h3>
+    <p>Utilizamos Firebase de Google para:</p>
+    <ul>
+        <li><strong>Analytics:</strong> Entender cómo los usuarios usan la aplicación (pantallas visitadas, funciones más usadas)</li>
+        <li><strong>Crashlytics:</strong> Detectar y solucionar errores de la aplicación automáticamente</li>
+    </ul>
+
+    <h3>Datos recopilados:</h3>
+    <ul>
+        <li>Eventos de uso de la aplicación (anónimos)</li>
+        <li>Informes de errores técnicos</li>
+        <li>Información del dispositivo (modelo, versión de Android)</li>
+        <li>Identificador único anónimo del dispositivo</li>
+    </ul>
+
+    <p><strong>NO recopilamos:</strong> Datos de ubicación GPS a través de Firebase. Sus datos de ubicación permanecen en su dispositivo.</p>
+
+    <p><strong>Más información:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">Política de Privacidad de Firebase</a></p>
+
+    <h2>5. Base de Datos de Radares</h2>
+    <p>NOTON descarga una base de datos de radares de tráfico de nuestros servidores Firebase Storage:</p>
+    <ul>
+        <li>La base de datos contiene ubicaciones de radares fijos, móviles, tramos y puntos negros</li>
+        <li>Se actualiza periódicamente con información de colaboradores</li>
+        <li>Se almacena localmente en su dispositivo para funcionamiento offline</li>
+        <li>NO enviamos sus datos de ubicación a nuestros servidores</li>
+    </ul>
+
+    <h2>6. Datos Almacenados Localmente</h2>
+    <p>La aplicación guarda en su dispositivo:</p>
+    <ul>
+        <li><strong>Favoritos:</strong> Ubicaciones marcadas como favoritas</li>
+        <li><strong>Trayectos:</strong> Historial de viajes realizados (opcional)</li>
+        <li><strong>Radares personalizados:</strong> Radares añadidos manualmente por el usuario</li>
+        <li><strong>Configuración:</strong> Preferencias y ajustes de la aplicación</li>
+        <li><strong>Dispositivos Bluetooth:</strong> Lista de dispositivos Bluetooth configurados para auto-activación</li>
+    </ul>
+
+    <p><strong>Control:</strong> Puede eliminar estos datos en cualquier momento desde los ajustes de la aplicación o desinstalando NOTON.</p>
+
+    <h2>7. Seguridad de los Datos</h2>
+    <p>Implementamos medidas de seguridad para proteger sus datos:</p>
+    <ul>
+        <li>Procesamiento local de datos de ubicación (no se envían a servidores)</li>
+        <li>Almacenamiento encriptado según estándares de Android</li>
+        <li>Conexiones seguras HTTPS con Firebase</li>
+        <li>Sin almacenamiento de contraseñas o datos sensibles</li>
+    </ul>
+
+    <h2>8. Datos que NO Recopilamos</h2>
+    <p>NOTON NO recopila, almacena ni transmite:</p>
+    <ul>
+        <li>Historial detallado de ubicaciones GPS</li>
+        <li>Datos personales identificables (nombre, email, teléfono)</li>
+        <li>Información de contactos</li>
+        <li>Contenido de llamadas o SMS</li>
+        <li>Fotos o archivos multimedia</li>
+        <li>Datos de otras aplicaciones</li>
+    </ul>
+
+    <h2>9. Compartición de Datos con Terceros</h2>
+    <p>NOTON NO vende, alquila ni comparte sus datos personales con terceros, EXCEPTO:</p>
+    <ul>
+        <li><strong>Google AdMob:</strong> Para mostrar publicidad (según su consentimiento GDPR)</li>
+        <li><strong>Firebase (Google):</strong> Para análisis anónimo y reporte de errores</li>
+        <li><strong>Requerimientos legales:</strong> Si es obligatorio por ley o para proteger nuestros derechos legales</li>
+    </ul>
+
+    <h2>10. Derechos del Usuario (GDPR)</h2>
+    <p>Si reside en la Unión Europea, tiene derecho a:</p>
+    <ul>
+        <li><strong>Acceso:</strong> Solicitar información sobre los datos que tenemos</li>
+        <li><strong>Rectificación:</strong> Corregir datos inexactos</li>
+        <li><strong>Eliminación:</strong> Solicitar la eliminación de sus datos</li>
+        <li><strong>Portabilidad:</strong> Recibir sus datos en formato estructurado</li>
+        <li><strong>Oposición:</strong> Oponerse al procesamiento de sus datos</li>
+        <li><strong>Retirar consentimiento:</strong> Cambiar sus preferencias de consentimiento de publicidad</li>
+    </ul>
+
+    <p>Para ejercer estos derechos, contacte con nosotros en la dirección indicada al final de esta política.</p>
+
+    <h2>11. Privacidad de Menores</h2>
+    <p>NOTON NO está dirigida a menores de 13 años. No recopilamos intencionadamente información de menores. Si es padre/madre y cree que su hijo nos ha proporcionado datos, contáctenos para eliminarlos.</p>
+
+    <h2>12. Cambios en esta Política de Privacidad</h2>
+    <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Le notificaremos cambios significativos mediante:</p>
+    <ul>
+        <li>Actualización de la fecha "Última actualización" al inicio de esta política</li>
+        <li>Notificación dentro de la aplicación (para cambios importantes)</li>
+    </ul>
+    <p>Le recomendamos revisar esta política periódicamente.</p>
+
+    <h2>13. Uso de la Aplicación Fuera de España</h2>
+    <p>NOTON ha sido desarrollada principalmente para su uso en España. Si usa la aplicación en otros países:</p>
+    <ul>
+        <li>Los datos pueden transferirse y procesarse fuera de su país de residencia</li>
+        <li>La base de datos de radares puede no estar completa o actualizada</li>
+        <li>Algunas funciones pueden no estar disponibles según las leyes locales</li>
+    </ul>
+
+    <h2>14. Servicios de Terceros</h2>
+    <p>NOTON integra los siguientes servicios de terceros, cada uno con su propia política de privacidad:</p>
+    <ul>
+        <li><strong>Google Play Services:</strong> <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad</a></li>
+        <li><strong>Google AdMob:</strong> <a href="https://support.google.com/admob/answer/6128543" target="_blank">Política de Privacidad</a></li>
+        <li><strong>Firebase Analytics:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">Política de Privacidad</a></li>
+        <li><strong>Firebase Crashlytics:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">Política de Privacidad</a></li>
+    </ul>
+
+    <div class="contact">
+        <h2>15. Contacto</h2>
+        <p>Si tiene preguntas sobre esta Política de Privacidad o sobre cómo tratamos sus datos, puede contactarnos en:</p>
+        <p>
+            <strong>Desarrollador:</strong> Ignacio Garcés<br>
+            <strong>Email:</strong> notonapp@live.com
+        </p>
+    </div>
+
+    <hr style="margin-top: 40px; border: none; border-top: 1px solid #ccc;">
+    <p style="text-align: center; color: #666; font-size: 14px;">
+        © 2025 NOTON Avisador de Radares - Todos los derechos reservados
+    </p>
+</body>
+</html>
