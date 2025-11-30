@@ -70,8 +70,11 @@
             background: #2a2a2a;
         }
         .platform-icon {
-            font-size: 4em;
-            margin-bottom: 15px;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(0,255,0,0.5));
         }
         .platform-name {
             font-size: 1.5em;
@@ -93,13 +96,13 @@
         
         <div class="platform-selector">
             <a href="/noton-web/android/" class="platform-card">
-                <div class="platform-icon">🤖</div>
+                <img src="/noton-web/shared/images/android-icon.png" alt="Android" class="platform-icon">
                 <div class="platform-name">Android</div>
                 <div class="platform-description">Versión para Google Play Store</div>
             </a>
             
             <a href="/noton-web/ios/" class="platform-card">
-                <div class="platform-icon">🍎</div>
+                <img src="/noton-web/shared/images/ios-icon.png" alt="iOS" class="platform-icon">
                 <div class="platform-name">iOS</div>
                 <div class="platform-description">Versión para App Store</div>
             </a>
