@@ -11,16 +11,23 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
-            background-color: #f9f9f9;
+            color: #ffffff;
+            background-color: #000000;
         }
         .header {
             text-align: center;
             padding: 40px 20px;
-            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
-            color: white;
+            background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
+            color: #000000;
             border-radius: 10px;
             margin-bottom: 30px;
+            box-shadow: 0 0 30px rgba(0,255,0,0.4);
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            display: block;
         }
         h1 {
             font-size: 2.5em;
@@ -28,42 +35,53 @@
         }
         .subtitle {
             font-size: 1.2em;
-            opacity: 0.95;
+            opacity: 0.9;
         }
         .content {
-            background: white;
+            background: #1a1a1a;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,255,0,0.2);
+            border: 1px solid #00ff00;
+        }
+        .content h2 {
+            color: #00ff00;
+        }
+        .content p {
+            color: #cccccc;
         }
         .legal-links {
             margin-top: 30px;
             padding: 20px;
-            background: #f5f5f5;
+            background: #222222;
             border-radius: 5px;
+            border: 1px solid #333333;
         }
         .legal-links h2 {
-            color: #2c3e50;
+            color: #00ff00;
             margin-bottom: 15px;
         }
         .legal-links h3 {
-            color: #555;
+            color: #00cc00;
             margin-top: 20px;
             margin-bottom: 10px;
         }
         .legal-links a {
             display: inline-block;
             margin: 5px 10px;
-            color: #007AFF;
+            color: #00ff00;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
         .legal-links a:hover {
             text-decoration: underline;
+            text-shadow: 0 0 10px rgba(0,255,0,0.8);
         }
     </style>
 </head>
 <body>
     <div class="header">
+        <img src="/noton-web/shared/images/logo.png" alt="NOTON Logo" class="logo">
         <h1>🍎 NOTON iOS</h1>
         <p class="subtitle">Avisador de Radares para iOS</p>
     </div>
